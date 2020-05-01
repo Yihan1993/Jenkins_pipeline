@@ -1,16 +1,23 @@
 Jenkinsfile (Declarative Pipeline)
 pipeline {
-    agent any
+    agent {
+        docker { image 'node:7-alpine' }
+    }
     stages {
+        stage('Build') {
+            steps {
+                sh 'echo "Hello World"'
+                sh '''
+                    echo "Multiline shell steps works too"
+                    ls -lah
+                '''
+            }
+        }
         stage('Test') {
             steps {
-                sh './gradlew check'
+                sh 'node --version'
             }
         }
     }
-    post {
-        always {
-            junit 'build/reports/**/*.xml'
-        }
-    }
 }
+
