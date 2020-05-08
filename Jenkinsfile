@@ -6,6 +6,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Hello World!'
+		echo 'this is a test'
                 sh 'echo myCustomEnvVar = $myCustomEnvVar'
             }
         }
