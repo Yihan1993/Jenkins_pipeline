@@ -1,0 +1,3 @@
+[submodule "openshift-cd-demo"]
+	path = openshift-cd-demo
+	url = https://github.com/Yihan1993/openshift-cd-demo.git
